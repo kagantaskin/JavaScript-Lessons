@@ -1,38 +1,35 @@
-	
-	var thisYear, yearJohnny, yearJackie;
+var currentYear, johnsBirthDay, jackiesBirthDay;
 
-	thisYear = 2020;
-	ageJohn = 28;
-	ageJackie = 37;
+currentYear = 2020;
+johnsAge = 28;
+jackiesAge = 37;
 
 
-	yearJohn = thisYear - ageJohn;
-	yearJackie = thisYear - ageJackie;
-	console.log('Year = ' + thisYear + '\n John = ' + yearJohn + ' Jackie = ' + yearJackie);
+johnsBirthDay = currentYear - johnsAge;
+jackiesBirthDay = currentYear - jackiesAge;
+console.log('Year = ' + currentYear + '\n John = ' + johnsBirthDay + ' Jackie = ' + jackiesBirthDay);
 
-	/*console.log(thisYear + 2);
-	console.log(thisYear * 4);
-	console.log(thisYear / 15);
-	console.log(thisYear - 7);*/
+/*console.log(currentYear + 2);
+console.log(currentYear * 4);
+console.log(currentYear / 15);
+console.log(currentYear - 7);*/
 
-	// Logical Operators
+// Logical Operators
 
-	var johnOlder = ageJohn > ageJackie;
-	console.log(johnOlder);
+var isJohnOlder = johnsAge > jackiesAge;
+console.log(isJohnOlder);
 
-	var johnOlder = ageJohn < ageJackie;
-	console.log(johnOlder);
+var isJohnOlder = johnsAge < jackiesAge;
+console.log(isJohnOlder);
 
-	// typeOf op
+// typeOf op
 
-	console.log(typeof johnOlder);
-	console.log(typeof ageJohn);
-	console.log(typeof 'Hello World!');
-	console.log(typeof x);
+console.log(typeof isJohnOlder);
+console.log(typeof johnsAge);
+console.log(typeof 'Hello World!');
+console.log(typeof x);
 
-	var a = prompt('Num 1');
-	var b = prompt('Num 2');
-	var numOne = parseInt(a);
-	var numTwo = parseInt(b);
+var inputValue1 = parseInt(prompt('Num 1').replace(/[^0-9]/gi, ''));
+var inputValue2 = parseInt(prompt('Num 2'));
 
-	console.log(numOne + numTwo)
+console.log(inputValue1 + inputValue2)
