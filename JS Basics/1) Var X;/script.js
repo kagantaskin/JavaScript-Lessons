@@ -36,3 +36,16 @@ if (1 === 1) {
 }
 
 console.log(limitedVariable);
+
+//Const
+
+const width = 200;
+
+console.log(width);
+
+if (1 === 1) {
+    // width = 1;
+    console.log(width);
+}
+
+console.log(width);
