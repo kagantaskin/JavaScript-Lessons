@@ -1,5 +1,5 @@
 var firstName = 'John';
-var civilStatus = 'single';
+var marriageStatus = 'single';
 
 var isMarried = true;
 

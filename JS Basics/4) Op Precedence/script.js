@@ -14,9 +14,10 @@ var x, y;
 	x = y = (3 + 5) * 4 - 6;
 console.log(x, y);
 
-	x = x * 2;
-		console.log(x);
-	x = x - 10;
-		console.log(x);
-	x++;
-		console.log(x);
+//Now you see me
+x *= 2;
+	console.log(x);
+x -= 10;
+	console.log(x);
+x++;
+	console.log(x);
