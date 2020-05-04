@@ -8,7 +8,8 @@ function calculateAgeOfUser(birthYear) {
 
 /*console.log('The user is ' + ageOfUser + ' year old');*/
 
-/*function yearUntilRetirement(ageOfUser, firstName)*/ var yearUntilRetirement = function(ageOfUser, firstName){
+//var yearUntilRetirement = function(ageOfUser, firstName)
+function yearUntilRetirement(ageOfUser, firstName){
 	var ageOfUser = calculateAgeOfUser(ageOfUser)
 	var retirement = 65 - ageOfUser;
 
@@ -23,4 +24,3 @@ yearUntilRetirement(1990, 'John');
 yearUntilRetirement(1982, 'Jackie');
 yearUntilRetirement(1453, 'Rocky');
 yearUntilRetirement(1776, 'Valentine');
-
