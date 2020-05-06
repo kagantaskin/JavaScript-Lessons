@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Message Bot</title>
+</head>
+<body>
+
+	<script src="script.js"></script>
+
+
+	<input type="text" id="userNameForStorage" placeholder="Your name">
+
+
+	<button onclick='importUsersName()'>Import Name</button>
+
+	<button onclick='deleteUsersName()'>Delete my life</button>
+
+	<script>
+		function greetTheUser(argument) {
+			if (userNameOnStorage !== null) {
+				document.write('Welcome, ' + userNameOnStorage);
+			}
+		}
+
+		greetTheUser();
+	</script>
+
+</body>
+</html>
