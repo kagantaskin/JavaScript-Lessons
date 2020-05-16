@@ -12,11 +12,41 @@ GAME RULES:
 //document.querySelector('#current-' + activePlayer).textContent = dice;
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
 
-var scores, roundScore, activePlayer, gamePlaying;
+var scores, roundScore, activePlayer, gamePlaying, previousScore, winningScore;
 
-init();
+function newGame() {
+	document.querySelector('.inputPanel').style.display = 'block';
+	document.querySelector('.wrapper').style.display = 'none';
 
+	var bestScoreButton = document.getElementById("bestScore");
 
+// Execute a function when the user releases a key on the keyboard
+	bestScoreButton.addEventListener("keyup", function(event) {
+	  // Number 13 is the "Enter" key on the keyboard
+	  if (event.keyCode === 13) {
+	  	if (document.getElementById("bestScore").value === null) {}
+		winningScore = 20;
+	    // Cancel the default action, if needed
+	    event.preventDefault();
+	    // Trigger the button element with a click
+	    document.getElementById("myBtn").click();
+	    document.querySelector('.inputPanel').style.display = 'none';
+		document.querySelector('.wrapper').style.display = 'block';
+		init();
+	  } else {
+		winningScore = document.getElementById("bestScore").value;
+	    // Cancel the default action, if needed
+	    event.preventDefault();
+	    // Trigger the button element with a click
+	    document.getElementById("myBtn").click();
+	    document.querySelector('.inputPanel').style.display = 'none';
+		document.querySelector('.wrapper').style.display = 'block';
+		init();
+	  }
+	});
+}
+
+newGame();
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
 	if (gamePlaying) {
@@ -30,9 +60,24 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
 			//add score
 			roundScore += dice;
 			document.querySelector('#current-' + activePlayer).textContent = roundScore;
+			console.log('prev score of player-' + activePlayer + ' is = ' + previousScore);
+
+			if ((previousScore[activePlayer] && dice) === 6) {
+					console.log(previousScore);
+					previousScore = [0, 0];
+					console.log(previousScore);
+					document.getElementById('score-' + activePlayer).textContent = '0';
+					nextPlayer();
+
+			}
+			previousScore[activePlayer] = dice;
+
+
 		} else {
 			//next player
 			nextPlayer();
+			console.log('prev score of player-' + activePlayer + ' is = ' + previousScore);
+			previousScore = [0, 0];
 		}
 	}
 
@@ -44,7 +89,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 
 		document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-		if (scores[activePlayer] >= 20) {
+		if (scores[activePlayer] >= winningScore) {
 		document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
 		document.querySelector('.dice').style.display = 'none';
 		document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -53,11 +98,12 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 		gamePlaying = false;
 		} else {
 		nextPlayer();
+			previousScore = [0, 0];
 		}
 	}
 });
 
-document.querySelector('.btn-new').addEventListener('click', init);
+document.querySelector('.btn-new').addEventListener('click', newGame);
 
 function nextPlayer() {
 	activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -74,6 +120,7 @@ function nextPlayer() {
 
 function init() {
 	scores = [0, 0];
+	previousScore = [0, 0];
 	roundScore = 0;
 	activePlayer = 0;
 	gamePlaying = true;
