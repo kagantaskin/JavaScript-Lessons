@@ -12,6 +12,17 @@ function Load() {
 	}
 }
 
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  
+    document.body.style.background = bgColor;
+}
+
+random_bg_color();
+
 Load();
 
 function getName() {
@@ -128,6 +139,7 @@ function backToMessaging() {
 	document.querySelector('.chatBoxInputs').style.display = 'block';
 	document.querySelector('.shoppingListMain').style.display = 'none';	
 	document.querySelector('.messagesSent').value = '';
+	document.querySelector('.justDeleteName').style.display = 'block';
 }
 
 function listShoppingList() {
@@ -158,6 +170,8 @@ function botRespond(messages) {
 			return 'bekle de gor';
 		case 'make a shopping list for me':
 			return createShoppingListItems();
+		case 'social media':
+			return 'None assigned yet';
 		case 'ahmet can babadas':
 			return 'ama koyduk';
 		default:

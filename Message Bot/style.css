@@ -25,6 +25,7 @@ input[type='text'], input[type='number'], select {
 	display: inline-block;
 	font-size: 16px;
 	border-radius: 4.5px;
+	background: transparent;
 }
 
 button:hover {
@@ -46,7 +47,7 @@ button:hover {
 	color: #FF5733;
 	font-size: 16px;
 	overflow-wrap: break-word;
-	height: 630px;
+	height: 600px;
 	overflow-y: scroll;
 }
 
