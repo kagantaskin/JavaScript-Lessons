@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Message Bot</title>
+	<title>Chat Bot 2000</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
+	<div class="nameGetter">
+		<input class="" type="text" id="getUserName">
+		<button id="getNameButton" onclick="getName()">Set Name</button>
+	</div>
+
+	<div class="chatBoxMain">
+		<div class="chatMessagesBorder">
+			<ul class="chatMessages">
+				<li style="border-bottom: 2px inset rgba(255, 87, 51, 0.7); text-align: center; width: 250px;" class="botMessage">Chat Bot 2000</li>
+			</ul>
+			<div class="chatBoxInputs">
+				<input type="text" class="messagesSent" id="messagesSent" placeholder="Your Message">
+				<button id="messageGetter" onclick="getMessage()">Send</button>
+			</div>
+			
+			<div class="shoppingListMain">
+				<select class="shoppingListName">
+					<option>ListOne</option>
+					<option>ListTwo</option>
+					<option>ListThree</option>
+				</select>
+				<input class="shoppingElements" type="text" class="shoppingItemSent" placeholder="Item">
+				<input class="shoppingElements" type="number" class="shoppingItemsCountSent" placeholder="Count">
+				<button class="shoppingElemButtons" onclick="makeShoppingList()">Save to List</button>
+				<button class="shoppingElemButtons" onchange="clearObj()" onclick="listShoppingList()">My Shop Lists</button>
+				<button onclick="backToMessaging()">Get back to messaging page</button>
+				
+			</div>
+		</div>
+		<div class="justDeleteName">
+				<button id="deleteNameButton" onclick="deleteName()">Delete My Life</button>
+		</div>
+	</div>
+
+
+
 	<script src="script.js"></script>
-
-
-	<input type="text" id="userNameForStorage" placeholder="Your name">
-
-
-	<button onclick='importUsersName()'>Import Name</button>
-
-	<button onclick='deleteUsersName()'>Delete my life</button>
-
-	<script>
-		function greetTheUser(argument) {
-			if (userNameOnStorage !== null) {
-				document.write('Welcome, ' + userNameOnStorage);
-			}
-		}
-
-		greetTheUser();
-	</script>
 
 </body>
 </html>
